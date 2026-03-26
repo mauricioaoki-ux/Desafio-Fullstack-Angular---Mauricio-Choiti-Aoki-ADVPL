@@ -1,0 +1,14 @@
+TABELA;CAMPO;TIPO;TAM;OBRIG;VALID;CBOX;RELACAO;DESCRICAO
+ZZG;ZZG_CODIGO;C;6;S;EXISTCHAV("ZZG");;GETSXENUM("ZZG","ZZG_CODIGO");Codigo da Tarefa
+ZZG;ZZG_TITULO;C;50;S;NonEmpty();;;Titulo
+ZZG;ZZG_DESCRI;M;10;S;NonEmpty();;;Descricao (Memo)
+ZZG;ZZG_SITUAC;C;1;S;;1=Pendente;2=Andamento;3=Concluida;4=Cancelada;Situacao
+ZZG;ZZG_USUINC;C;10;S;;;__cUserId;Usuario de Inclusao
+ZZG;ZZG_DTINC;D;8;S;;;dDataBase;Data de Inclusao
+ZZG;ZZG_DTCONC;D;8;N;;;;Data de Conclusao
+ZZH;ZZH_CODTAR;C;6;S;EXISTCPO("ZZG");;;Codigo da Tarefa (FK)
+ZZH;ZZH_CODIGO;C;6;S;EXISTCHAV("ZZH");;GETSXENUM("ZZH","ZZH_CODIGO");Codigo da Subtarefa
+ZZH;ZZH_DESCRI;C;50;S;NonEmpty();;;Descricao da Subtarefa
+ZZH;ZZH_RESPON;C;50;S;NonEmpty();;;Responsavel
+ZZH;ZZH_STATUS;C;1;S;;1=Pendente;2=Andamento;3=Concluida;4=Cancelada;Status da Subtarefa
+ZZH;ZZH_DTCONC;D;8;N;;;;Data de Conclusao Subtarefa
